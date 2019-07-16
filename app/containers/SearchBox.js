@@ -6,16 +6,17 @@ import I18n from '../i18n';
 import { isIOS } from '../utils/deviceInfo';
 import { CustomIcon } from '../lib/Icons';
 import sharedStyles from '../views/Styles';
+import { COLOR_SEARCHBOX_CONTAINER, COLOR_SEARCHBOX_BACKGROUND, COLOR_SEARCHBOX_TEXT } from '../constants/colors';
 
 const styles = StyleSheet.create({
 	container: {
-		backgroundColor: isIOS ? '#F7F8FA' : '#54585E'
+		backgroundColor: COLOR_SEARCHBOX_CONTAINER
 	},
 	searchBox: {
 		alignItems: 'center',
-		backgroundColor: '#E1E5E8',
+		backgroundColor: COLOR_SEARCHBOX_BACKGROUND,
 		borderRadius: 10,
-		color: '#8E8E93',
+		color: COLOR_SEARCHBOX_TEXT,
 		flexDirection: 'row',
 		fontSize: 17,
 		height: 36,
@@ -24,7 +25,7 @@ const styles = StyleSheet.create({
 		paddingHorizontal: 10
 	},
 	input: {
-		color: '#8E8E93',
+		color: COLOR_SEARCHBOX_TEXT,
 		flex: 1,
 		fontSize: 17,
 		marginLeft: 8,
@@ -37,7 +38,7 @@ const styles = StyleSheet.create({
 const SearchBox = ({ onChangeText, testID }) => (
 	<View style={styles.container}>
 		<View style={styles.searchBox}>
-			<CustomIcon name='magnifier' size={14} color='#8E8E93' />
+			<CustomIcon name='magnifier' size={14} color={COLOR_SEARCHBOX_TEXT} />
 			<TextInput
 				autoCapitalize='none'
 				autoCorrect={false}

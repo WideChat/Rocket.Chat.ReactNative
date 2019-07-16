@@ -1,6 +1,7 @@
 import { StyleSheet } from 'react-native';
 import {
-	COLOR_SEPARATOR, COLOR_BORDER, COLOR_DANGER, COLOR_WHITE
+	COLOR_SEPARATOR, COLOR_BORDER, COLOR_DANGER, COLOR_BACKGROUND_CONTAINER_PRIMARY,
+	COLOR_BORDER_SECONDARY
 } from '../../constants/colors';
 
 import sharedStyles from '../Styles';
@@ -11,10 +12,10 @@ export default StyleSheet.create({
 	},
 	container: {
 		flex: 1,
-		backgroundColor: '#F6F7F9'
+		backgroundColor: COLOR_BACKGROUND_CONTAINER_PRIMARY
 	},
 	sectionItem: {
-		backgroundColor: COLOR_WHITE,
+		backgroundColor: COLOR_BACKGROUND_CONTAINER_PRIMARY,
 		paddingVertical: 16,
 		flexDirection: 'row',
 		alignItems: 'center'
@@ -44,7 +45,7 @@ export default StyleSheet.create({
 	},
 	sectionSeparator: {
 		height: 10,
-		backgroundColor: '#F6F7F9'
+		backgroundColor: COLOR_BORDER_SECONDARY
 	},
 	sectionSeparatorBorder: {
 		borderColor: COLOR_BORDER,

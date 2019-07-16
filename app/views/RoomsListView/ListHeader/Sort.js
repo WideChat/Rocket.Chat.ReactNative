@@ -20,7 +20,7 @@ const Sort = React.memo(({ searchLength, sortBy, toggleSort }) => {
 		>
 			<View style={styles.sortItemContainer}>
 				<Text style={styles.sortToggleText}>{I18n.t('Sorting_by', { key: I18n.t(sortBy === 'alphabetical' ? 'name' : 'activity') })}</Text>
-				<CustomIcon style={styles.sortIcon} size={22} name='sort1' />
+				<CustomIcon style={styles.sortIconHeader} size={22} name='sort1' />
 			</View>
 		</Touch>
 	);

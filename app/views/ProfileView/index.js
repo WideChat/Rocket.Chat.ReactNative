@@ -27,6 +27,7 @@ import { CustomIcon } from '../../lib/Icons';
 import { DrawerButton } from '../../containers/HeaderButton';
 import StatusBar from '../../containers/StatusBar';
 import { COLOR_TEXT } from '../../constants/colors';
+import { ICON_RADIUS_FACTOR } from '../../constants/icons';
 
 @connect(state => ({
 	user: {
@@ -286,17 +287,18 @@ export default class ProfileView extends LoggedView {
 		return (
 			<View style={styles.avatarButtons}>
 				{this.renderAvatarButton({
-					child: <Avatar text={`@${ user.username }`} size={50} baseUrl={baseUrl} userId={user.id} token={user.token} />,
+					child: <Avatar text={`@${ user.username }`} size={50} baseUrl={baseUrl}
+					               userId={user.id} token={user.token} borderRadius={50 * ICON_RADIUS_FACTOR}/>,
 					onPress: () => this.resetAvatar(),
 					key: 'profile-view-reset-avatar'
 				})}
 				{this.renderAvatarButton({
-					child: <CustomIcon name='upload' size={30} color={COLOR_TEXT} />,
+					child: <CustomIcon name='upload' size={30} color={COLOR_TEXT} borderRadius={30 * ICON_RADIUS_FACTOR}/>,
 					onPress: () => this.pickImage(),
 					key: 'profile-view-upload-avatar'
 				})}
 				{this.renderAvatarButton({
-					child: <CustomIcon name='permalink' size={30} color={COLOR_TEXT} />,
+					child: <CustomIcon name='permalink' size={30} color={COLOR_TEXT} borderRadius={30 * ICON_RADIUS_FACTOR}/>,
 					onPress: () => this.setAvatar({ url: avatarUrl, data: avatarUrl, service: 'url' }),
 					disabled: !avatarUrl,
 					key: 'profile-view-avatar-url-button'
@@ -402,6 +404,7 @@ export default class ProfileView extends LoggedView {
 								baseUrl={baseUrl}
 								userId={user.id}
 								token={user.token}
+								borderRadius={100 * ICON_RADIUS_FACTOR}
 							/>
 						</View>
 						<RCTextInput

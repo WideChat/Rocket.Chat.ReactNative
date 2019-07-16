@@ -1,7 +1,7 @@
 import { StyleSheet } from 'react-native';
 
 import {
-	COLOR_SEPARATOR, COLOR_PRIMARY, COLOR_WHITE, COLOR_TEXT_DESCRIPTION
+	COLOR_SEPARATOR, COLOR_PRIMARY, COLOR_BACKGROUND_CONTAINER_PRIMARY, COLOR_TEXT_DESCRIPTION, COLOR_WHITE
 } from '../../constants/colors';
 import { isIOS } from '../../utils/deviceInfo';
 import sharedStyles from '../Styles';
@@ -9,7 +9,7 @@ import sharedStyles from '../Styles';
 export default StyleSheet.create({
 	container: {
 		flex: 1,
-		backgroundColor: COLOR_WHITE
+		backgroundColor: COLOR_BACKGROUND_CONTAINER_PRIMARY
 	},
 	safeAreaView: {
 		flex: 1
@@ -37,7 +37,7 @@ export default StyleSheet.create({
 	reactionPickerContainer: {
 		// width: width - 20,
 		// height: width - 20,
-		backgroundColor: '#F7F7F7',
+		backgroundColor: COLOR_BACKGROUND_CONTAINER_PRIMARY,
 		borderRadius: 4,
 		flexDirection: 'column'
 	},

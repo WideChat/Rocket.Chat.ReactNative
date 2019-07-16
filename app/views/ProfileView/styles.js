@@ -1,4 +1,8 @@
 import { StyleSheet, Platform } from 'react-native';
+import {
+	COLOR_AVATAR_BUTTON, COLOR_DIALOG_INPUT
+} from '../../constants/colors';
+import { ICON_RADIUS_FACTOR } from '../../constants/icons';
 
 export default StyleSheet.create({
 	avatarContainer: {
@@ -12,22 +16,23 @@ export default StyleSheet.create({
 		justifyContent: 'flex-start'
 	},
 	avatarButton: {
-		backgroundColor: '#e1e5e8',
+		backgroundColor: COLOR_AVATAR_BUTTON,
 		width: 50,
 		height: 50,
 		alignItems: 'center',
 		justifyContent: 'center',
 		marginRight: 15,
 		marginBottom: 15,
-		borderRadius: 2
+		borderRadius: 50 * ICON_RADIUS_FACTOR
 	},
 	dialogInput: Platform.select({
 		ios: {},
 		android: {
 			borderRadius: 4,
-			borderColor: 'rgba(0,0,0,.15)',
+			borderColor: COLOR_DIALOG_INPUT,
 			borderWidth: 2,
 			paddingHorizontal: 10
 		}
 	})
 });
+

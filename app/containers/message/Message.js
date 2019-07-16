@@ -27,6 +27,7 @@ import { COLOR_DANGER } from '../../constants/colors';
 import debounce from '../../utils/debounce';
 import DisclosureIndicator from '../DisclosureIndicator';
 import sharedStyles from '../../views/Styles';
+import { ICON_RADIUS_FACTOR } from '../../constants/icons';
 
 const SYSTEM_MESSAGES = [
 	'r',
@@ -244,7 +245,7 @@ export default class Message extends PureComponent {
 					style={small ? styles.avatarSmall : styles.avatar}
 					text={avatar ? '' : author.username}
 					size={small ? 20 : 36}
-					borderRadius={small ? 2 : 4}
+					borderRadius={small ? 20 * ICON_RADIUS_FACTOR: 36 * ICON_RADIUS_FACTOR}
 					avatar={avatar}
 					baseUrl={baseUrl}
 					userId={user.id}

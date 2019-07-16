@@ -10,7 +10,7 @@ import I18n from '../../../i18n';
 import sharedStyles from '../../Styles';
 import { isIOS, isAndroid } from '../../../utils/deviceInfo';
 import Icon from './Icon';
-import { COLOR_TEXT_DESCRIPTION, HEADER_TITLE, COLOR_WHITE } from '../../../constants/colors';
+import { COLOR_TYPING, HEADER_TITLE, COLOR_WHITE } from '../../../constants/colors';
 
 const TITLE_SIZE = 16;
 const styles = StyleSheet.create({
@@ -34,7 +34,7 @@ const styles = StyleSheet.create({
 	},
 	typing: {
 		...sharedStyles.textRegular,
-		color: isIOS ? COLOR_TEXT_DESCRIPTION : COLOR_WHITE,
+		color: COLOR_TYPING,
 		fontSize: 12,
 		flex: 4
 	},

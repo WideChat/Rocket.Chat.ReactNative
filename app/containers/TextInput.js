@@ -7,7 +7,7 @@ import { BorderlessButton } from 'react-native-gesture-handler';
 
 import sharedStyles from '../views/Styles';
 import {
-	COLOR_DANGER, COLOR_TEXT_DESCRIPTION, COLOR_TEXT, COLOR_BORDER
+	COLOR_DANGER, COLOR_TEXT_DESCRIPTION, COLOR_TEXT, COLOR_BORDER, COLOR_TEXT_INPUT_BACKGROUND
 } from '../constants/colors';
 import { CustomIcon } from '../lib/Icons';
 
@@ -30,7 +30,7 @@ const styles = StyleSheet.create({
 		paddingRight: 14,
 		borderWidth: 1,
 		borderRadius: 2,
-		backgroundColor: 'white',
+		backgroundColor: COLOR_TEXT_INPUT_BACKGROUND,
 		borderColor: COLOR_BORDER
 	},
 	inputIconLeft: {

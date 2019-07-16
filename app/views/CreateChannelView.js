@@ -20,7 +20,9 @@ import { showErrorAlert } from '../utils/info';
 import { isAndroid } from '../utils/deviceInfo';
 import { CustomHeaderButtons, Item } from '../containers/HeaderButton';
 import StatusBar from '../containers/StatusBar';
-import { COLOR_TEXT_DESCRIPTION, COLOR_WHITE } from '../constants/colors';
+import {
+    COLOR_TEXT_DESCRIPTION, COLOR_BACKGROUND_CONTAINER_PRIMARY, COLOR_BACKGROUND_LIST
+} from '../constants/colors';
 
 const styles = StyleSheet.create({
 	container: {
@@ -29,7 +31,7 @@ const styles = StyleSheet.create({
 	},
 	list: {
 		width: '100%',
-		backgroundColor: COLOR_WHITE
+		backgroundColor: COLOR_BACKGROUND_LIST
 	},
 	separator: {
 		marginLeft: 60
@@ -43,11 +45,11 @@ const styles = StyleSheet.create({
 		fontSize: 17,
 		...sharedStyles.textRegular,
 		...sharedStyles.textColorNormal,
-		backgroundColor: COLOR_WHITE
+		backgroundColor: COLOR_BACKGROUND_CONTAINER_PRIMARY
 	},
 	swithContainer: {
 		height: 54,
-		backgroundColor: COLOR_WHITE,
+		backgroundColor: COLOR_BACKGROUND_CONTAINER_PRIMARY,
 		alignItems: 'center',
 		justifyContent: 'space-between',
 		flexDirection: 'row',

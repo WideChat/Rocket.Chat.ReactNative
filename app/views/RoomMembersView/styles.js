@@ -1,10 +1,10 @@
 import { StyleSheet } from 'react-native';
-import { COLOR_SEPARATOR, COLOR_WHITE } from '../../constants/colors';
+import { COLOR_SEPARATOR, COLOR_BACKGROUND_CONTAINER_PRIMARY } from '../../constants/colors';
 
 export default StyleSheet.create({
 	list: {
 		flex: 1,
-		backgroundColor: COLOR_WHITE
+		backgroundColor: COLOR_BACKGROUND_CONTAINER_PRIMARY
 	},
 	item: {
 		flexDirection: 'row',

@@ -1,19 +1,20 @@
 import { StyleSheet } from 'react-native';
-import { COLOR_SEPARATOR, COLOR_WHITE } from '../../constants/colors';
+import { COLOR_SEPARATOR, COLOR_BACKGROUND_CONTAINER_PRIMARY,
+         COLOR_ITEM_CURRENT } from '../../constants/colors';
 
 import sharedStyles from '../Styles';
 
 export default StyleSheet.create({
 	container: {
 		flex: 1,
-		backgroundColor: COLOR_WHITE
+		backgroundColor: COLOR_BACKGROUND_CONTAINER_PRIMARY
 	},
 	item: {
 		flexDirection: 'row',
 		alignItems: 'center'
 	},
 	itemCurrent: {
-		backgroundColor: '#E1E5E8'
+		backgroundColor: COLOR_ITEM_CURRENT
 	},
 	itemLeft: {
 		marginHorizontal: 10,

@@ -31,7 +31,7 @@ import I18n from '../../i18n';
 import ReplyPreview from './ReplyPreview';
 import { CustomIcon } from '../../lib/Icons';
 import debounce from '../../utils/debounce';
-import { COLOR_PRIMARY, COLOR_TEXT_DESCRIPTION } from '../../constants/colors';
+import { COLOR_KEYBOARD_ICONS, COLOR_TEXT_DESCRIPTION } from '../../constants/colors';
 
 const MENTIONS_TRACKING_TYPE_USERS = '@';
 const MENTIONS_TRACKING_TYPE_EMOJIS = ':';
@@ -254,7 +254,7 @@ class MessageBox extends Component {
 				>
 					<CustomIcon
 						size={22}
-						color={COLOR_PRIMARY}
+						color={COLOR_KEYBOARD_ICONS}
 						name='cross'
 					/>
 				</BorderlessButton>
@@ -271,7 +271,7 @@ class MessageBox extends Component {
 				>
 					<CustomIcon
 						size={22}
-						color={COLOR_PRIMARY}
+						color={COLOR_KEYBOARD_ICONS}
 						name='emoji'
 					/>
 				</BorderlessButton>
@@ -286,7 +286,7 @@ class MessageBox extends Component {
 				>
 					<CustomIcon
 						size={22}
-						color={COLOR_PRIMARY}
+						color={COLOR_KEYBOARD_ICONS}
 						name='keyboard'
 					/>
 				</BorderlessButton>
@@ -307,7 +307,7 @@ class MessageBox extends Component {
 					accessibilityLabel={I18n.t('Send message')}
 					accessibilityTraits='button'
 				>
-					<CustomIcon name='send1' size={23} color={COLOR_PRIMARY} />
+					<CustomIcon name='send1' size={23} color={COLOR_KEYBOARD_ICONS} />
 				</BorderlessButton>
 			);
 			return icons;
@@ -321,7 +321,7 @@ class MessageBox extends Component {
 				accessibilityLabel={I18n.t('Send audio message')}
 				accessibilityTraits='button'
 			>
-				<CustomIcon name='mic' size={23} color={COLOR_PRIMARY} />
+				<CustomIcon name='mic' size={23} color={COLOR_KEYBOARD_ICONS} />
 			</BorderlessButton>
 		);
 		icons.push(
@@ -333,7 +333,7 @@ class MessageBox extends Component {
 				accessibilityLabel={I18n.t('Message actions')}
 				accessibilityTraits='button'
 			>
-				<CustomIcon name='plus' size={23} color={COLOR_PRIMARY} />
+				<CustomIcon name='plus' size={23} color={COLOR_KEYBOARD_ICONS} />
 			</BorderlessButton>
 		);
 		return icons;
