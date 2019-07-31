@@ -1,25 +1,68 @@
-import { isIOS } from '../utils/deviceInfo';
+import * as theme from './colorsWideChat';
 
-export const COLOR_DANGER = '#f5455c';
-export const COLOR_SUCCESS = '#2de0a5';
-export const COLOR_PRIMARY = '#1d74f5';
-export const COLOR_WHITE = '#fff';
-export const COLOR_BUTTON_PRIMARY = COLOR_PRIMARY;
-export const COLOR_TITLE = '#0C0D0F';
-export const COLOR_TEXT = '#2F343D';
-export const COLOR_TEXT_DESCRIPTION = '#9ca2a8';
-export const COLOR_SEPARATOR = '#A7A7AA';
-export const COLOR_BACKGROUND_CONTAINER = '#f3f4f5';
-export const COLOR_BORDER = '#e1e5e8';
-export const COLOR_UNREAD = '#e1e5e8';
-export const COLOR_TOAST = '#0C0D0F';
-export const STATUS_COLORS = {
-	online: '#2de0a5',
-	busy: COLOR_DANGER,
-	away: '#ffd21f',
-	offline: '#cbced1'
-};
+//WIDECHAT specific colors
+export const WIDECHAT_COLOR_PRIMARY = theme.WIDECHAT_COLOR_PRIMARY;
+export const WIDECHAT_GREEN_GRADIENT_LESS_DARK = theme.WIDECHAT_GREEN_GRADIENT_LESS_DARK;
+export const WIDECHAT_GREEN_GRADIENT_LIGHT = theme.WIDECHAT_GREEN_GRADIENT_LIGHT;
+export const WIDECHAT_GREEN_GRADIENT_DARK = theme.WIDECHAT_GREEN_GRADIENT_DARK;
+export const WIDECHAT_FAB = theme.WIDECHAT_FAB;
 
-export const HEADER_BACKGROUND = isIOS ? '#f8f8f8' : '#2F343D';
-export const HEADER_TITLE = isIOS ? COLOR_TITLE : COLOR_WHITE;
-export const HEADER_BACK = isIOS ? COLOR_PRIMARY : COLOR_WHITE;
+//Important colors and colors for status symbols(i.e online /offline)
+export const COLOR_WHITE = theme.COLOR_WHITE;
+export const COLOR_PRIMARY = theme.COLOR_PRIMARY;
+export const COLOR_DANGER = theme.COLOR_DANGER;
+export const COLOR_SUCCESS = theme.COLOR_SUCCESS;
+export const STATUS_COLORS = theme.STATUS_COLORS;
+
+//colors relating to most text and titles
+export const COLOR_TITLE = theme.COLOR_TITLE;
+export const COLOR_TEXT = theme.COLOR_TEXT;
+export const COLOR_TEXT_DESCRIPTION = theme.COLOR_TEXT_DESCRIPTION;
+export const COLOR_UNREAD = theme.COLOR_UNREAD;
+
+//Colors relating to buttons, backgrounds and borders
+export const COLOR_BACKGROUND_CONTAINER = theme.COLOR_BACKGROUND_CONTAINER;
+export const COLOR_BACKGROUND_LIST = theme.COLOR_BACKGROUND_LIST;
+export const COLOR_BACKGROUND_CONTAINER_PRIMARY = theme.COLOR_BACKGROUND_CONTAINER_PRIMARY;
+export const LOADING_SCREEN_BACKGROUND = theme.LOADING_SCREEN_BACKGROUND;
+export const COLOR_BUTTON_PRIMARY = theme.COLOR_BUTTON_PRIMARY;
+export const COLOR_BUTTON_SECONDARY = theme.COLOR_BUTTON_SECONDARY;
+export const COLOR_SEPARATOR = theme.COLOR_SEPARATOR;
+export const COLOR_BORDER = theme.COLOR_BORDER;
+export const COLOR_BORDER_SECONDARY = theme.COLOR_BORDER_SECONDARY;
+export const COLOR_TOAST = theme.COLOR_TOAST;
+
+//Colors related to header/ status bar
+export const HEADER_BACKGROUND = theme.HEADER_BACKGROUND;
+export const HEADER_TITLE = theme.HEADER_TITLE;
+export const HEADER_BACK = theme.HEADER_BACK;
+export const HEADER_GRADIENT = theme.HEADER_GRADIENT;
+
+//Colors related to drop down sort tab for roomslist
+export const COLOR_DROPDOWN_CONTAINER_HEADER = theme.COLOR_DROPDOWN_CONTAINER_HEADER; //sort bar for chat channels
+export const COLOR_BUTTON_DISABLED = theme.COLOR_BUTTON_DISABLED;
+export const COLOR_GROUP_TITLE_CONTAINER = theme.COLOR_GROUP_TITLE_CONTAINER; //isIOS ? COLOR_WHITE : '#9ea2a8'
+export const COLOR_GROUP_TITLE = theme.COLOR_GROUP_TITLE; //isIOS ? COLOR_TEXT : '#54585E'
+export const COLOR_GROUP_SORT_ICON = theme.COLOR_GROUP_SORT_ICON;
+export const COLOR_SAFE_AREA_BACKGROUND = theme.COLOR_SAFE_AREA_BACKGROUND;
+export const COLOR_SEARCHBOX_CONTAINER = theme.COLOR_SEARCHBOX_CONTAINER;
+export const COLOR_SEARCHBOX_BACKGROUND = theme.COLOR_SEARCHBOX_BACKGROUND;
+export const COLOR_SEARCHBOX_TEXT = theme.COLOR_SEARCHBOX_TEXT;
+export const COLOR_TEXT_INPUT_BACKGROUND = theme.COLOR_TEXT_INPUT_BACKGROUND;
+export const COLOR_TEXT_HEADER = theme.COLOR_TEXT_HEADER;
+
+//Colors related to linked users / items in chat
+export const COLOR_MENTIONED_USER = theme.COLOR_MENTIONED_USER
+export const COLOR_BACKGROUND_MENTIONED_USER = theme.COLOR_BACKGROUND_MENTIONED_USER //transparent
+export const COLOR_MENTIONED_LOGGED_USER = theme.COLOR_MENTIONED_LOGGED_USER
+export const COLOR_BACKGROUND_MENTIONED_LOGGED_USER = theme.COLOR_BACKGROUND_MENTIONED_LOGGED_USER
+export const COLOR_MENTIONED_USER_ALL = theme.COLOR_MENTIONED_USER_ALL
+export const COLOR_BACKGROUND_MENTIONED_USER_ALL = theme.COLOR_BACKGROUND_MENTIONED_USER_ALL
+export const COLOR_LINK = theme.COLOR_LINK
+export const COLOR_REPLIED_THREAD = theme.COLOR_REPLIED_THREAD
+export const COLOR_MESSAGE_THREAD = theme.COLOR_MESSAGE_THREAD
+export const COLOR_MESSAGE_THREAD_TEXT = theme.COLOR_MESSAGE_THREAD_TEXT
+export const COLOR_LINK_TITLE = theme.COLOR_LINK_TITLE
+export const COLOR_REACTIONS = theme.COLOR_REACTIONS
+export const COLOR_REACTIONS_COUNT = theme.COLOR_REACTIONS_COUNT
+export const COLOR_KEYBOARD_ICONS = theme.COLOR_KEYBOARD_ICONS
