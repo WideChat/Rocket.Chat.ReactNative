@@ -165,7 +165,7 @@ export default class SettingsView extends LoggedView {
 								testID='settings-view-language'
 							/>
 						</RNPickerSelect>
-						<View style={sharedStyles.alignItemsFlexStart}>
+						<View style={[sharedStyles.alignItemsCenter, {width: '50%'}]}>
 							<Button
 								title={I18n.t('Save_Changes')}
 								type='primary'

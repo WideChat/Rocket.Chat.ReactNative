@@ -2,7 +2,9 @@ import React from 'react';
 import { StyleSheet } from 'react-native';
 import PropTypes from 'prop-types';
 
-import { STATUS_COLORS, COLOR_TEXT_DESCRIPTION, COLOR_WHITE } from '../../../constants/colors';
+import {
+    STATUS_COLORS, COLOR_TEXT_DESCRIPTION, COLOR_WHITE, COLOR_TEXT_HEADER
+} from '../../../constants/colors';
 import { CustomIcon } from '../../../lib/Icons';
 import Status from '../../../containers/Status/Status';
 import { isIOS } from '../../../utils/deviceInfo';
@@ -14,7 +16,7 @@ const styles = StyleSheet.create({
 		width: ICON_SIZE,
 		height: ICON_SIZE,
 		marginRight: 8,
-		color: isIOS ? COLOR_TEXT_DESCRIPTION : COLOR_WHITE
+		color: COLOR_TEXT_HEADER
 	},
 	status: {
 		marginLeft: 4,

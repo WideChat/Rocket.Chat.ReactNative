@@ -7,7 +7,7 @@ import { BorderlessButton } from 'react-native-gesture-handler';
 
 import sharedStyles from '../views/Styles';
 import {
-	COLOR_DANGER, COLOR_TEXT_DESCRIPTION, COLOR_TEXT, COLOR_BORDER
+	COLOR_DANGER, COLOR_TEXT_DESCRIPTION, COLOR_TEXT, COLOR_BORDER, COLOR_TEXT_INPUT_BACKGROUND, COLOR_WHITE
 } from '../constants/colors';
 import { CustomIcon } from '../lib/Icons';
 
@@ -30,7 +30,7 @@ const styles = StyleSheet.create({
 		paddingRight: 14,
 		borderWidth: 1,
 		borderRadius: 2,
-		backgroundColor: 'white',
+		backgroundColor: COLOR_TEXT_INPUT_BACKGROUND,
 		borderColor: COLOR_BORDER
 	},
 	inputIconLeft: {
@@ -78,11 +78,20 @@ export default class RCTextInput extends React.PureComponent {
 		inputRef: PropTypes.func,
 		testID: PropTypes.string,
 		iconLeft: PropTypes.string,
-		placeholder: PropTypes.string
+		placeholder: PropTypes.string,
+		styleIcon: PropTypes.any,
+		stylePlaceHolderText: PropTypes.any,
+		styleInput: PropTypes.any,
+		stylePassword: PropTypes.any
+
 	}
 
 	static defaultProps = {
-		error: {}
+		error: {},
+		styleIcon: styles.icon,
+		stylePlaceHolderText: COLOR_TEXT_DESCRIPTION,
+		styleInput: styles.input,
+		stylePassword: styles.password
 	}
 
 	state = {
@@ -90,12 +99,12 @@ export default class RCTextInput extends React.PureComponent {
 	}
 
 	get iconLeft() {
-		const { testID, iconLeft } = this.props;
+		const { testID, iconLeft, styleIcon } = this.props;
 		return (
 			<CustomIcon
 				name={iconLeft}
 				testID={testID ? `${ testID }-icon-left` : null}
-				style={[styles.iconContainer, styles.iconLeft, styles.icon]}
+				style={[styles.iconContainer, styles.iconLeft, styleIcon]}
 				size={20}
 			/>
 		);
@@ -103,13 +112,13 @@ export default class RCTextInput extends React.PureComponent {
 
 	get iconPassword() {
 		const { showPassword } = this.state;
-		const { testID } = this.props;
+		const { testID, styleIcon, stylePassword } = this.props;
 		return (
 			<BorderlessButton onPress={this.tooglePassword} style={[styles.iconContainer, styles.iconRight]}>
 				<CustomIcon
 					name={showPassword ? 'Eye' : 'eye-off'}
 					testID={testID ? `${ testID }-icon-right` : null}
-					style={[styles.icon, styles.password]}
+					style={[styleIcon, stylePassword]}
 					size={20}
 				/>
 			</BorderlessButton>
@@ -123,7 +132,7 @@ export default class RCTextInput extends React.PureComponent {
 	render() {
 		const { showPassword } = this.state;
 		const {
-			label, error, secureTextEntry, containerStyle, inputRef, iconLeft, inputStyle, testID, placeholder, ...inputProps
+			label, error, secureTextEntry, containerStyle, inputRef, iconLeft, inputStyle, testID, placeholder, styleIcon, stylePlaceHolderText, stylePassword, styleInput, ...inputProps
 		} = this.props;
 		return (
 			<View style={[styles.inputContainer, containerStyle]}>
@@ -131,7 +140,7 @@ export default class RCTextInput extends React.PureComponent {
 				<View style={styles.wrap}>
 					<TextInput
 						style={[
-							styles.input,
+							styleInput,
 							error.error && styles.inputError,
 							inputStyle,
 							iconLeft && styles.inputIconLeft,
@@ -145,7 +154,7 @@ export default class RCTextInput extends React.PureComponent {
 						testID={testID}
 						accessibilityLabel={placeholder}
 						placeholder={placeholder}
-						placeholderTextColor={COLOR_TEXT_DESCRIPTION}
+						placeholderTextColor={stylePlaceHolderText}
 						contentDescription={placeholder}
 						{...inputProps}
 					/>

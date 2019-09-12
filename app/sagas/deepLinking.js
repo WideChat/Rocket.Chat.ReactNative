@@ -28,6 +28,25 @@ const navigate = function* navigate({ params }) {
 	}
 };
 
+const getServerInfoAlso = function* getServerInfo({ server }) {
+	try {
+		const serverInfo = yield RocketChat.getServerInfo(server);
+		if (!serverInfo.success) {
+			Alert.alert(I18n.t('Oops'), I18n.t(serverInfo.message, serverInfo.messageOptions));
+			yield put(serverFailure());
+			return;
+		}
+
+		database.databases.serversDB.write(() => {
+			database.databases.serversDB.create('servers', { id: server, version: serverInfo.version }, true);
+		});
+
+		return serverInfo;
+	} catch (e) {
+		log('getServerInfo', e);
+	}
+};
+
 const handleOpen = function* handleOpen({ params }) {
 	if (!params.host) {
 		return;
@@ -68,14 +87,30 @@ const handleOpen = function* handleOpen({ params }) {
 			yield take(types.SERVER.SELECT_SUCCESS);
 			yield navigate({ params });
 		} else {
+			try {
+        		const serverInfo = yield getServerInfoAlso('https://viasatconnect.com');
+
+        		// TODO: cai aqui O.o
+        		const loginServicesLength = yield RocketChat.getLoginServices('https://viasatconnect.com');
+        		if (loginServicesLength === 0) {
+        			Navigation.navigate('LoginView');
+        		} else {
+        			Navigation.navigate('LoginSignupView');
+        		}
+
+        		yield put(selectServerRequest('https://viasatconnect.com', serverInfo.version, false));
+        	} catch (e) {
+        		yield put(serverFailure());
+        		log('handleServerRequest', e);
+        	}
 			// if deep link is from a different server
-			const result = yield RocketChat.getServerInfo(server);
-			if (!result.success) {
-				return;
-			}
-			Navigation.navigate('OnboardingView', { previousServer: server });
-			yield delay(1000);
-			EventEmitter.emit('NewServer', { server: host });
+			//const result = yield RocketChat.getServerInfo(server);
+			//if (!result.success) {
+				//return;
+			//}
+			//Navigation.navigate('LoginSignupView', { previousServer: 'https://viasatconnect.com' });
+			//yield delay(1000);
+			//EventEmitter.emit('NewServer', { server: 'https://viasatconnect.com' });
 		}
 	}
 };

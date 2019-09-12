@@ -20,12 +20,12 @@ import SearchBox from '../containers/SearchBox';
 import { CustomIcon } from '../lib/Icons';
 import { CloseModalButton } from '../containers/HeaderButton';
 import StatusBar from '../containers/StatusBar';
-import { COLOR_PRIMARY, COLOR_WHITE } from '../constants/colors';
+import { COLOR_PRIMARY, COLOR_BACKGROUND_CONTAINER_PRIMARY, COLOR_SAFE_AREA_BACKGROUND } from '../constants/colors';
 
 const styles = StyleSheet.create({
 	safeAreaView: {
 		flex: 1,
-		backgroundColor: isIOS ? '#F7F8FA' : '#E1E5E8'
+		backgroundColor: COLOR_SAFE_AREA_BACKGROUND
 	},
 	separator: {
 		marginLeft: 60
@@ -35,7 +35,7 @@ const styles = StyleSheet.create({
 	},
 	createChannelContainer: {
 		height: 47,
-		backgroundColor: COLOR_WHITE,
+		backgroundColor: COLOR_BACKGROUND_CONTAINER_PRIMARY,
 		flexDirection: 'row',
 		alignItems: 'center'
 	},

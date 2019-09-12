@@ -4,9 +4,9 @@ import HeaderButtons, { HeaderButton, Item } from 'react-navigation-header-butto
 
 import { CustomIcon } from '../lib/Icons';
 import { isIOS } from '../utils/deviceInfo';
-import { COLOR_PRIMARY, COLOR_WHITE } from '../constants/colors';
+import { COLOR_TITLE } from '../constants/colors';
 
-const color = isIOS ? COLOR_PRIMARY : COLOR_WHITE;
+const color = COLOR_TITLE//isIOS ? COLOR_PRIMARY : COLOR_WHITE;
 export const headerIconSize = 23;
 
 const CustomHeaderButton = React.memo(props => (

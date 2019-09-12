@@ -1,12 +1,14 @@
 import { StyleSheet, Platform } from 'react-native';
 
 import {
-	COLOR_DANGER, COLOR_BUTTON_PRIMARY, COLOR_SEPARATOR, COLOR_TEXT, COLOR_TEXT_DESCRIPTION, COLOR_TITLE
+	COLOR_DANGER, COLOR_BUTTON_PRIMARY, COLOR_SEPARATOR, COLOR_TEXT, COLOR_TEXT_DESCRIPTION,
+	COLOR_TITLE, COLOR_BACKGROUND_CONTAINER_PRIMARY, COLOR_BUTTON_SECONDARY, COLOR_BORDER_SECONDARY,
+	COLOR_LOADING
 } from '../constants/colors';
 
 export default StyleSheet.create({
 	container: {
-		backgroundColor: 'white',
+		backgroundColor: COLOR_BACKGROUND_CONTAINER_PRIMARY,
 		flex: 1
 	},
 	containerScrollView: {
@@ -18,7 +20,7 @@ export default StyleSheet.create({
 	},
 	buttonContainer: {
 		paddingVertical: 15,
-		backgroundColor: '#414852',
+		backgroundColor: COLOR_BUTTON_SECONDARY,
 		marginBottom: 20,
 		borderRadius: 2
 	},
@@ -28,12 +30,12 @@ export default StyleSheet.create({
 	},
 	button: {
 		textAlign: 'center',
-		color: 'white',
+		color: COLOR_BORDER_SECONDARY,
 		fontWeight: '700'
 	},
 	button_inverted: {
 		textAlign: 'center',
-		color: '#414852',
+		color: COLOR_BUTTON_SECONDARY,
 		fontWeight: '700',
 		flexGrow: 1
 	},
@@ -45,7 +47,7 @@ export default StyleSheet.create({
 	loading: {
 		flex: 1,
 		position: 'absolute',
-		backgroundColor: 'rgba(255,255,255,.2)',
+		backgroundColor: COLOR_LOADING,
 		left: 0,
 		top: 0
 	},
@@ -54,7 +56,7 @@ export default StyleSheet.create({
 		bottom: -3,
 		right: -3,
 		borderWidth: 3,
-		borderColor: '#fff'
+		borderColor: COLOR_BORDER_SECONDARY
 	},
 	link: {
 		fontWeight: 'bold',

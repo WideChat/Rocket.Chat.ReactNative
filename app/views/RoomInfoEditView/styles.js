@@ -1,16 +1,19 @@
 import { StyleSheet } from 'react-native';
 
-import { COLOR_DANGER, COLOR_SEPARATOR } from '../../constants/colors';
+import {
+    COLOR_DANGER, COLOR_SEPARATOR, COLOR_BORDER, COLOR_BUTTON_DISABLED
+ } from '../../constants/colors';
+
 import sharedStyles from '../Styles';
 
 export default StyleSheet.create({
 	buttonInverted: {
-		borderColor: 'rgba(0,0,0,.15)',
+		borderColor: COLOR_BORDER,
 		borderWidth: 2,
 		borderRadius: 2
 	},
 	buttonContainerDisabled: {
-		backgroundColor: 'rgba(65, 72, 82, 0.7)'
+		backgroundColor: COLOR_BUTTON_DISABLED
 	},
 	buttonDanger: {
 		borderColor: COLOR_DANGER,

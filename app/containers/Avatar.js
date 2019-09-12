@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { View, ViewPropTypes } from 'react-native';
 import FastImage from 'react-native-fast-image';
+import { ICON_RADIUS_FACTOR } from '../constants/icons';
 
 const Avatar = React.memo(({
 	text, size, baseUrl, borderRadius, style, avatar, type, children, userId, token
@@ -63,7 +64,7 @@ Avatar.defaultProps = {
 	text: '',
 	size: 25,
 	type: 'd',
-	borderRadius: 4
+	borderRadius: 25 * ICON_RADIUS_FACTOR
 };
 
 export default Avatar;

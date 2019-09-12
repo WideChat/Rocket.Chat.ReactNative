@@ -32,6 +32,8 @@ target 'RocketChatRN' do
 
   pod 'react-native-orientation-locker', :path => '../node_modules/react-native-orientation-locker'
 
+  pod 'BVLinearGradient', :path => '../node_modules/react-native-linear-gradient'
+
 end
 
 post_install do |installer|

@@ -13,7 +13,9 @@ import LoggedView from './View';
 import I18n from '../i18n';
 import DisclosureIndicator from '../containers/DisclosureIndicator';
 import StatusBar from '../containers/StatusBar';
-import { COLOR_SEPARATOR, COLOR_WHITE } from '../constants/colors';
+import {
+    COLOR_SEPARATOR, COLOR_BACKGROUND_LIST, COLOR_BACKGROUND_CONTAINER_PRIMARY
+} from '../constants/colors';
 import openLink from '../utils/openLink';
 
 const styles = StyleSheet.create({
@@ -23,7 +25,7 @@ const styles = StyleSheet.create({
 	},
 	scroll: {
 		marginTop: 35,
-		backgroundColor: COLOR_WHITE,
+		backgroundColor: COLOR_BACKGROUND_LIST,
 		borderColor: COLOR_SEPARATOR,
 		borderTopWidth: StyleSheet.hairlineWidth,
 		borderBottomWidth: StyleSheet.hairlineWidth
@@ -37,7 +39,7 @@ const styles = StyleSheet.create({
 	item: {
 		width: '100%',
 		height: 48,
-		backgroundColor: COLOR_WHITE,
+		backgroundColor: COLOR_BACKGROUND_CONTAINER_PRIMARY,
 		paddingLeft: 20,
 		paddingRight: 10,
 		flexDirection: 'row',

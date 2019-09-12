@@ -17,21 +17,26 @@ import Button from '../containers/Button';
 import I18n from '../i18n';
 import { LegalButton } from '../containers/HeaderButton';
 import StatusBar from '../containers/StatusBar';
-import { COLOR_SEPARATOR, COLOR_BORDER } from '../constants/colors';
+import { COLOR_SEPARATOR, COLOR_BORDER, COLOR_REACTIONS_COUNT,
+         COLOR_LOGIN_BACKGROUND_GRADIENT_START, COLOR_LOGIN_BACKGROUND_GRADIENT_END,
+         COLOR_LOGIN_CONTAINER_BACKGROUND, COLOR_LOGIN_SERVICE_TEXT } from '../constants/colors';
+import { ICON_RADIUS_FACTOR } from '../constants/icons';
+import LinearGradient from 'react-native-linear-gradient';
 
 const styles = StyleSheet.create({
 	container: {
+	    backgroundColor: COLOR_LOGIN_CONTAINER_BACKGROUND,
 		paddingVertical: 30
 	},
 	safeArea: {
 		paddingBottom: 30
 	},
 	serviceButton: {
-		borderRadius: 2,
+		borderRadius: 100 * ICON_RADIUS_FACTOR,
 		marginBottom: 10
 	},
 	serviceButtonContainer: {
-		borderRadius: 2,
+		borderRadius: 100 * ICON_RADIUS_FACTOR,
 		borderWidth: 1,
 		borderColor: COLOR_BORDER,
 		width: '100%',
@@ -50,7 +55,7 @@ const styles = StyleSheet.create({
 	},
 	serviceText: {
 		...sharedStyles.textRegular,
-		...sharedStyles.textColorNormal,
+		color: COLOR_LOGIN_SERVICE_TEXT,
 		fontSize: 16
 	},
 	serviceName: {
@@ -83,6 +88,9 @@ const styles = StyleSheet.create({
 	},
 	inverted: {
 		transform: [{ scaleY: -1 }]
+	},
+	loginButton: {
+	    borderRadius: 100 * ICON_RADIUS_FACTOR
 	}
 });
 
@@ -362,25 +370,35 @@ export default class LoginSignupView extends LoggedView {
 
 	render() {
 		return (
-			<ScrollView style={[sharedStyles.containerScrollView, sharedStyles.container, styles.container]} {...scrollPersistTaps}>
-				<StatusBar />
-				<SafeAreaView testID='welcome-view' forceInset={{ bottom: 'never' }} style={styles.safeArea}>
-					{this.renderServices()}
-					{this.renderServicesSeparator()}
-					<Button
-						title={<Text>{I18n.t('Login_with')} <Text style={{ ...sharedStyles.textBold }}>{I18n.t('email')}</Text></Text>}
-						type='primary'
-						onPress={() => this.login()}
-						testID='welcome-view-login'
-					/>
-					<Button
-						title={I18n.t('Create_account')}
-						type='secondary'
-						onPress={() => this.register()}
-						testID='welcome-view-register'
-					/>
-				</SafeAreaView>
-			</ScrollView>
+		    <View style={{flex:1, justifyContent:'center'}}>
+            <LinearGradient colors={[COLOR_LOGIN_BACKGROUND_GRADIENT_START,
+                                     COLOR_LOGIN_BACKGROUND_GRADIENT_END]}
+                                               style={{ flex: 1 }}
+                                               start={{x: 0, y: 0}}
+                                               end={{x: 0, y: 1}}>
+            <ScrollView style={[sharedStyles.containerScrollView, sharedStyles.container, styles.container]} {...scrollPersistTaps}>
+                <SafeAreaView testID='welcome-view' forceInset={{ bottom: 'never' }} style={styles.safeArea}>
+                    {this.renderServices()}
+                    {this.renderServicesSeparator()}
+                    <Button
+                        style={styles.loginButton}
+                        title={<Text>{I18n.t('Login_with')} <Text style={{ ...sharedStyles.textBold }}>{I18n.t('email')}</Text></Text>}
+                        type='primary_login'
+                        onPress={() => this.login()}
+                        testID='welcome-view-login'
+                    />
+                    <Button
+                        style={styles.loginButton}
+                        title={I18n.t('Create_account')}
+                        type='secondary_login'
+                        onPress={() => this.register()}
+                        testID='welcome-view-register'
+                    />
+                </SafeAreaView>
+            </ScrollView>
+            </LinearGradient>
+			</View>
+
 		);
 	}
 }

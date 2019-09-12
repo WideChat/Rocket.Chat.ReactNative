@@ -8,7 +8,7 @@ import isEqual from 'lodash/isEqual';
 import openLink from '../../utils/openLink';
 import sharedStyles from '../../views/Styles';
 import {
-	COLOR_BACKGROUND_CONTAINER, COLOR_BORDER, COLOR_PRIMARY
+	COLOR_BACKGROUND_CONTAINER, COLOR_BORDER, COLOR_PRIMARY, COLOR_LINK_TITLE
 } from '../../constants/colors';
 
 const styles = StyleSheet.create({
@@ -31,7 +31,7 @@ const styles = StyleSheet.create({
 		alignItems: 'flex-start'
 	},
 	title: {
-		color: COLOR_PRIMARY,
+		color: COLOR_LINK_TITLE,
 		fontSize: 16,
 		...sharedStyles.textMedium
 	},

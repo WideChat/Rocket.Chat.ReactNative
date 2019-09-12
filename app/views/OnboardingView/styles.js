@@ -2,7 +2,9 @@ import { StyleSheet } from 'react-native';
 
 import { verticalScale, moderateScale } from '../../utils/scaling';
 import sharedStyles from '../Styles';
-import { COLOR_PRIMARY, COLOR_BORDER, COLOR_WHITE } from '../../constants/colors';
+import {
+    COLOR_PRIMARY, COLOR_BORDER, COLOR_BACKGROUND_CONTAINER_PRIMARY
+} from '../../constants/colors';
 
 const colors = {
 	backgroundPrimary: COLOR_PRIMARY,
@@ -19,7 +21,7 @@ export default StyleSheet.create({
 	container: {
 		flex: 1,
 		flexDirection: 'column',
-		backgroundColor: COLOR_WHITE
+		backgroundColor: COLOR_BACKGROUND_CONTAINER_PRIMARY
 	},
 	onboarding: {
 		alignSelf: 'center',

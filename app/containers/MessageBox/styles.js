@@ -3,14 +3,14 @@ import { StyleSheet } from 'react-native';
 import { isIOS } from '../../utils/deviceInfo';
 import sharedStyles from '../../views/Styles';
 import {
-	COLOR_BORDER, COLOR_SEPARATOR, COLOR_BACKGROUND_CONTAINER, COLOR_WHITE
+	COLOR_BORDER, COLOR_SEPARATOR, COLOR_BACKGROUND_CONTAINER, COLOR_WHITE, COLOR_TEXT_INPUT_BACKGROUND
 } from '../../constants/colors';
 
 const MENTION_HEIGHT = 50;
 
 export default StyleSheet.create({
 	textBox: {
-		backgroundColor: COLOR_WHITE,
+		backgroundColor: COLOR_TEXT_INPUT_BACKGROUND,
 		flex: 0,
 		alignItems: 'center',
 		borderTopWidth: StyleSheet.hairlineWidth,
@@ -27,7 +27,7 @@ export default StyleSheet.create({
 		flexDirection: 'row',
 		alignItems: 'center',
 		flexGrow: 0,
-		backgroundColor: COLOR_WHITE
+		backgroundColor: COLOR_TEXT_INPUT_BACKGROUND
 	},
 	textBoxInput: {
 		textAlignVertical: 'center',

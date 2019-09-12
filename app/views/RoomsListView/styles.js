@@ -1,7 +1,11 @@
 import { StyleSheet } from 'react-native';
 import { isIOS } from '../../utils/deviceInfo';
 import {
-	COLOR_SEPARATOR, COLOR_TEXT, COLOR_PRIMARY, COLOR_WHITE
+	COLOR_SEPARATOR, COLOR_TEXT, COLOR_PRIMARY, COLOR_TEXT_DESCRIPTION,
+	COLOR_BACKGROUND_CONTAINER_PRIMARY, COLOR_BACKGROUND_LIST, COLOR_DROPDOWN_CONTAINER_HEADER,
+	COLOR_WHITE, HEADER_BACK, COLOR_GROUP_TITLE_CONTAINER, COLOR_GROUP_TITLE, COLOR_GROUP_SORT_ICON,
+	COLOR_TEXT_HEADER, COLOR_SEARCHBOX_BACKGROUND, COLOR_ROOMS_ACTION_BUTTON,
+	COLOR_GROUP_SORT_ICON_HEADER, COLOR_TEXT_DROPDOWN_CONTAINER
 } from '../../constants/colors';
 
 import sharedStyles from '../Styles';
@@ -9,16 +13,16 @@ import sharedStyles from '../Styles';
 export default StyleSheet.create({
 	container: {
 		flex: 1,
-		backgroundColor: isIOS ? COLOR_WHITE : '#E1E5E8'
+		backgroundColor: COLOR_BACKGROUND_CONTAINER_PRIMARY
 	},
 	list: {
 		width: '100%',
-		backgroundColor: COLOR_WHITE
+		backgroundColor: COLOR_BACKGROUND_LIST
 	},
 	actionButtonIcon: {
-		fontSize: 20,
+		fontSize: 40,
 		height: 22,
-		color: 'white'
+		color: COLOR_ROOMS_ACTION_BUTTON
 	},
 	loading: {
 		flex: 1
@@ -28,7 +32,7 @@ export default StyleSheet.create({
 		borderBottomWidth: StyleSheet.hairlineWidth,
 		borderColor: COLOR_SEPARATOR,
 		alignItems: 'center',
-		backgroundColor: isIOS ? COLOR_WHITE : '#54585E',
+		backgroundColor: COLOR_DROPDOWN_CONTAINER_HEADER,
 		flexDirection: 'row'
 	},
 	sortToggleContainerClose: {
@@ -40,11 +44,11 @@ export default StyleSheet.create({
 		fontSize: 15,
 		flex: 1,
 		marginLeft: 15,
-		...sharedStyles.textColorDescription,
+		color: COLOR_TEXT_DROPDOWN_CONTAINER,
 		...sharedStyles.textRegular
 	},
 	dropdownContainer: {
-		backgroundColor: COLOR_WHITE,
+		backgroundColor: COLOR_BACKGROUND_CONTAINER_PRIMARY,
 		width: '100%',
 		position: 'absolute',
 		top: 0
@@ -77,16 +81,22 @@ export default StyleSheet.create({
 		width: 22,
 		height: 22,
 		marginHorizontal: 15,
-		...sharedStyles.textColorDescription
+		color: COLOR_GROUP_SORT_ICON
 	},
+    sortIconHeader: {
+        width: 22,
+        height: 22,
+        marginHorizontal: 15,
+        color: COLOR_GROUP_SORT_ICON_HEADER
+    },
 	groupTitleContainer: {
 		paddingHorizontal: 15,
 		paddingTop: 17,
 		paddingBottom: 10,
-		backgroundColor: isIOS ? COLOR_WHITE : '#9ea2a8'
+		backgroundColor: COLOR_GROUP_TITLE_CONTAINER
 	},
 	groupTitle: {
-		color: isIOS ? COLOR_TEXT : '#54585E',
+		color: COLOR_GROUP_TITLE,
 		fontSize: isIOS ? 22 : 15,
 		letterSpacing: 0.27,
 		flex: 1,
@@ -99,11 +109,11 @@ export default StyleSheet.create({
 	serverHeaderText: {
 		fontSize: 15,
 		marginLeft: 15,
-		...sharedStyles.textColorDescription,
+		color: COLOR_TEXT_HEADER,
 		...sharedStyles.textRegular
 	},
 	serverHeaderAdd: {
-		color: isIOS ? COLOR_PRIMARY : COLOR_WHITE,
+		color: HEADER_BACK,
 		fontSize: 15,
 		marginRight: 15,
 		paddingVertical: 10,

@@ -2,7 +2,7 @@
   <item android:drawable="@color/splashBackground"/>
   <item>
     <bitmap
-      android:src="@drawable/launch_screen"
+      android:src="@drawable/onboarding"
       android:gravity="center"/>
   </item>
 </layer-list>

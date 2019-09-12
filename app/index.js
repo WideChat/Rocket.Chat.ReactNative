@@ -4,7 +4,7 @@ import {
 } from 'react-navigation';
 import { Provider } from 'react-redux';
 import { useScreens } from 'react-native-screens'; // eslint-disable-line import/no-unresolved
-import { Linking } from 'react-native';
+import { Linking, View, StyleSheet } from 'react-native';
 
 import { appInit } from './actions';
 import { deepLinkingOpen } from './actions/deepLinking';
@@ -34,16 +34,18 @@ import ForgotPasswordView from './views/ForgotPasswordView';
 import RegisterView from './views/RegisterView';
 import OAuthView from './views/OAuthView';
 import SetUsernameView from './views/SetUsernameView';
-import { HEADER_BACKGROUND, HEADER_TITLE, HEADER_BACK } from './constants/colors';
+import { HEADER_BACKGROUND, HEADER_TITLE, HEADER_BACK, HEADER_GRADIENT } from './constants/colors';
+import { SINGLE_SERVER_LOGIN, DEFAULT_SERVER } from './constants/settings';
 import parseQuery from './lib/methods/helpers/parseQuery';
 import { initializePushNotifications, onNotification } from './push';
 import store from './lib/createStore';
+import LinearGradient from 'react-native-linear-gradient';
 
 useScreens();
 
 const parseDeepLinking = (url) => {
 	if (url) {
-		url = url.replace(/rocketchat:\/\/|https:\/\/go.rocket.chat\//, '');
+		url = url.replace(/rocketchat:\/\/|https:\/\/viasatconnect\//, '');
 		const regex = /^(room|auth)\?/;
 		if (url.match(regex)) {
 			url = url.replace(regex, '').trim();
@@ -56,31 +58,53 @@ const parseDeepLinking = (url) => {
 };
 
 const defaultHeader = {
-	headerStyle: {
-		backgroundColor: HEADER_BACKGROUND
-	},
+    headerStyle: {
+        backgroundColor: HEADER_BACKGROUND,
+    },
 	headerTitleStyle: {
 		color: HEADER_TITLE
 	},
 	headerBackTitle: null,
+	headerBackground: HEADER_GRADIENT,
 	headerTintColor: HEADER_BACK
 };
 
 // Outside
-const OutsideStack = createStackNavigator({
-	OnboardingView: {
-		screen: OnboardingView,
-		header: null
-	},
-	NewServerView,
-	LoginSignupView,
-	LoginView,
-	ForgotPasswordView,
-	RegisterView,
-	LegalView
-}, {
-	defaultNavigationOptions: defaultHeader
-});
+getOutsideStack = () => {
+    if (SINGLE_SERVER_LOGIN) {
+        return createStackNavigator({
+            NewServerView: {
+                screen: NewServerView,
+                header: defaultHeader,
+                params: { server: DEFAULT_SERVER }
+            },
+            LoginSignupView,
+            LoginView,
+            ForgotPasswordView,
+            RegisterView,
+            LegalView
+        }, {
+            defaultNavigationOptions: defaultHeader
+        });
+    } else {
+        return createStackNavigator({
+            OnboardingView: {
+                screen: OnboardingView,
+                header: null
+            },
+            NewServerView,
+            LoginSignupView,
+            LoginView,
+            ForgotPasswordView,
+            RegisterView,
+            LegalView
+        }, {
+            defaultNavigationOptions: defaultHeader
+        });
+    }
+}
+
+const OutsideStack = this.getOutsideStack()
 
 const OAuthStack = createStackNavigator({
 	OAuthView

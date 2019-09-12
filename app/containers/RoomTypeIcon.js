@@ -2,14 +2,15 @@ import React from 'react';
 import { Image, StyleSheet } from 'react-native';
 import PropTypes from 'prop-types';
 import { CustomIcon } from '../lib/Icons';
-import { COLOR_TEXT_DESCRIPTION } from '../constants/colors';
+import { COLOR_TEXT_DESCRIPTION, COLOR_WHITE } from '../constants/colors';
+import { PUBLIC_GROUP_ICON, PRIVATE_GROUP_ICON} from '../constants/icons';
 
 const styles = StyleSheet.create({
 	style: {
 		marginRight: 7,
 		marginTop: 3,
 		tintColor: COLOR_TEXT_DESCRIPTION,
-		color: COLOR_TEXT_DESCRIPTION
+		backgroundColor: COLOR_WHITE
 	},
 	discussion: {
 		marginRight: 6
@@ -27,9 +28,9 @@ const RoomTypeIcon = React.memo(({ type, size, style }) => {
 	}
 
 	if (type === 'c') {
-		return <Image source={{ uri: 'hashtag' }} style={[styles.style, style, { width: size, height: size }]} />;
+		return <Image source={{ uri: PUBLIC_GROUP_ICON }} style={[styles.style, style, { width: size, height: size }]} />;
 	}
-	return <Image source={{ uri: 'lock' }} style={[styles.style, style, { width: size, height: size }]} />;
+	return <Image source={{ uri: PRIVATE_GROUP_ICON }} style={[styles.style, style, { width: size, height: size }]} />;
 });
 
 RoomTypeIcon.propTypes = {

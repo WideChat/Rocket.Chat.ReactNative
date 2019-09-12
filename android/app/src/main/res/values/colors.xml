@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 	<color name="primary_dark">#660B0B0B</color>
-	<item name="splashBackground" type="color">#FFFFFF</item>
+	<item name="splashBackground" type="color">#FF00FF</item>
 	<item name="notification_text" type="color">#CC3333</item>
+	<color name="widechatStatusBar">#008085</color>
+	<color name="widechatGreenGradientLight">#26a1a1</color>
 </resources>

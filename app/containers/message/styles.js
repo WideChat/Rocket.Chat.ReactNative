@@ -2,7 +2,11 @@ import { StyleSheet, Platform } from 'react-native';
 
 import sharedStyles from '../../views/Styles';
 import {
-	COLOR_BORDER, COLOR_PRIMARY, COLOR_WHITE, COLOR_BACKGROUND_CONTAINER
+	COLOR_BORDER, COLOR_PRIMARY, COLOR_WHITE, COLOR_BACKGROUND_CONTAINER, COLOR_MENTIONED_USER,
+	COLOR_BACKGROUND_MENTIONED_USER, COLOR_MENTIONED_LOGGED_USER,
+	COLOR_BACKGROUND_MENTIONED_LOGGED_USER, COLOR_MENTIONED_USER_ALL,
+	COLOR_BACKGROUND_MENTIONED_USER_ALL, COLOR_LINK, COLOR_REPLIED_THREAD, COLOR_MESSAGE_THREAD,
+    COLOR_MESSAGE_THREAD_TEXT, COLOR_REACTIONS, COLOR_REACTIONS_COUNT
 } from '../../constants/colors';
 
 const codeFontFamily = Platform.select({
@@ -77,17 +81,18 @@ export default StyleSheet.create({
 		borderRadius: 2,
 		borderWidth: 1,
 		borderColor: COLOR_BORDER,
+		backgroundColor: COLOR_BACKGROUND_CONTAINER,
 		height: 28,
 		minWidth: 46.3
 	},
 	reactedContainer: {
-		borderColor: COLOR_PRIMARY
+		borderColor: COLOR_REACTIONS
 	},
 	reactionCount: {
 		fontSize: 14,
 		marginLeft: 3,
 		marginRight: 8.5,
-		color: COLOR_PRIMARY,
+		color: COLOR_REACTIONS_COUNT,
 		...sharedStyles.textSemibold
 	},
 	reactionEmoji: {
@@ -106,7 +111,7 @@ export default StyleSheet.create({
 		marginLeft: 16
 	},
 	addReaction: {
-		color: COLOR_PRIMARY
+		color: COLOR_REACTIONS
 	},
 	errorButton: {
 		paddingHorizontal: 15,
@@ -123,34 +128,34 @@ export default StyleSheet.create({
 		flexDirection: 'row',
 		alignItems: 'center',
 		justifyContent: 'center',
-		backgroundColor: COLOR_PRIMARY,
+		backgroundColor: COLOR_MESSAGE_THREAD,
 		borderRadius: 2
 	},
 	smallButton: {
 		height: 30
 	},
 	buttonIcon: {
-		color: COLOR_WHITE,
+		color: COLOR_MESSAGE_THREAD_TEXT,
 		marginRight: 6
 	},
 	buttonText: {
-		color: COLOR_WHITE,
+		color: COLOR_MESSAGE_THREAD_TEXT,
 		fontSize: 14,
 		...sharedStyles.textMedium
 	},
 	mention: {
 		...sharedStyles.textMedium,
-		color: '#0072FE',
+		color: COLOR_MENTIONED_USER,
 		padding: 5,
-		backgroundColor: '#E8F2FF'
+		backgroundColor: COLOR_BACKGROUND_MENTIONED_USER
 	},
 	mentionLoggedUser: {
-		color: COLOR_WHITE,
-		backgroundColor: COLOR_PRIMARY
+		color: COLOR_MENTIONED_LOGGED_USER,
+		backgroundColor: COLOR_BACKGROUND_MENTIONED_LOGGED_USER
 	},
 	mentionAll: {
-		color: COLOR_WHITE,
-		backgroundColor: '#FF5B5A'
+		color: COLOR_MENTIONED_USER_ALL,
+		backgroundColor: COLOR_BACKGROUND_MENTIONED_USER_ALL
 	},
 	paragraph: {
 		marginTop: 0,
@@ -200,7 +205,7 @@ export default StyleSheet.create({
 		padding: 4
 	},
 	link: {
-		color: COLOR_PRIMARY,
+		color: COLOR_LINK,
 		...sharedStyles.textRegular
 	},
 	startedDiscussion: {
@@ -226,14 +231,14 @@ export default StyleSheet.create({
 		marginBottom: 12
 	},
 	repliedThreadIcon: {
-		color: COLOR_PRIMARY,
+		color: COLOR_REPLIED_THREAD,
 		marginRight: 10,
 		marginLeft: 16
 	},
 	repliedThreadName: {
 		fontSize: 16,
 		flex: 1,
-		color: COLOR_PRIMARY,
+		color: COLOR_REPLIED_THREAD,
 		...sharedStyles.textRegular
 	}
 });
