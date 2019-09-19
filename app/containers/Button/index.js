@@ -7,6 +7,7 @@ import { COLOR_BUTTON_PRIMARY, COLOR_BUTTON_PRIMARY_LOGIN, COLOR_BUTTON_SECONDAR
          COLOR_BUTTON_SECONDARY_LOGIN, COLOR_BUTTON_TEXT_PRIMARY, COLOR_BUTTON_TEXT_PRIMARY_LOGIN,
          COLOR_BUTTON_TEXT_SECONDARY, COLOR_BUTTON_TEXT_SECONDARY_LOGIN, COLOR_BORDER
        } from '../../constants/colors';
+import { ICON_RADIUS_FACTOR } from '../../constants/icons';
 import sharedStyles from '../../views/Styles';
 
 const colors = {
@@ -24,11 +25,11 @@ const colors = {
 /* eslint-disable react-native/no-unused-styles */
 const styles = StyleSheet.create({
     button: {
-        borderRadius: 50, //FIXME all border radius should be same not a factor
+        borderRadius: 100 * ICON_RADIUS_FACTOR, //FIXME all border radius should be same not a factor
         marginBottom: 10,
     },
 	buttonContainer: {
-		borderRadius: 50,
+		borderRadius: 100 * ICON_RADIUS_FACTOR,
 		borderWidth: 1,
 		borderColor: COLOR_BORDER,
 		width: '100%',

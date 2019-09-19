@@ -7,6 +7,7 @@ import {
 	COLOR_TEXT_HEADER, COLOR_SEARCHBOX_BACKGROUND, COLOR_ROOMS_ACTION_BUTTON,
 	COLOR_GROUP_SORT_ICON_HEADER, COLOR_TEXT_DROPDOWN_CONTAINER
 } from '../../constants/colors';
+import { ICON_RADIUS_FACTOR } from '../../constants/icons';
 
 import sharedStyles from '../Styles';
 

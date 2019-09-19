@@ -19,6 +19,7 @@ import { isIOS, isNotch } from '../utils/deviceInfo';
 import { CustomIcon } from '../lib/Icons';
 import StatusBar from '../containers/StatusBar';
 import { COLOR_PRIMARY } from '../constants/colors';
+import { DEFAULT_SERVER } from '../constants/settings';
 
 const styles = StyleSheet.create({
 	image: {
@@ -55,7 +56,7 @@ const styles = StyleSheet.create({
 	}
 });
 
-const defaultServer = 'https://open.rocket.chat';
+const defaultServer = DEFAULT_SERVER;
 
 @connect(state => ({
 	connecting: state.server.connecting

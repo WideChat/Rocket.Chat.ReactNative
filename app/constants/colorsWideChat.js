@@ -60,6 +60,7 @@ export const COLOR_BORDER = COLOR_SEPARATOR;
 export const COLOR_BORDER_SECONDARY = COLOR_WHITE;
 export const COLOR_TOAST = '#d000ff';
 export const COLOR_LOADING = 'rgba(255,255,255,.2)';
+
 //Colors related to drop down sort tab for roomslist
 export const COLOR_DROPDOWN_CONTAINER_HEADER = WIDECHAT_GREEN_GRADIENT_LIGHT; //sort bar for chat channels
 export const COLOR_BUTTON_DISABLED = '#E1E5E8FF';

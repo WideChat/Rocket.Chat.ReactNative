@@ -1,3 +1,5 @@
+import * as theme from './settingsWideChat';
+
 export default {
 	Accounts_CustomFields: {
 		type: 'valueAsString'
@@ -61,5 +63,5 @@ export default {
 	}
 };
 
-export const SINGLE_SERVER_LOGIN = true
-export const DEFAULT_SERVER = 'https://viasatconnect.com'
+export const SINGLE_SERVER_LOGIN = theme.SINGLE_SERVER_LOGIN
+export const DEFAULT_SERVER = theme.DEFAULT_SERVER

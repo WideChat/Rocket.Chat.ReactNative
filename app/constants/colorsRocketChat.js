@@ -5,6 +5,7 @@ export const COLOR_WHITE = '#fff';
 export const COLOR_PRIMARY = '#1d74f5';
 export const COLOR_DANGER = '#f5455c';
 export const COLOR_SUCCESS = '#2de0a5';
+export const TRANSPARENT = '#00000000';
 export const STATUS_COLORS = {
 	online: '#2de0a5',
 	busy: COLOR_DANGER,
@@ -27,20 +28,26 @@ export const HEADER_TITLE = isIOS ? COLOR_TITLE : COLOR_WHITE;
 export const HEADER_BACK = isIOS ? COLOR_PRIMARY : COLOR_WHITE;
 export const HEADER_GRADIENT = null;
 
-//Colors relating to buttons, backgrounds and borders
+//Colors relating to buttons
+export const COLOR_BUTTON_PRIMARY = COLOR_PRIMARY;
+export const COLOR_BUTTON_PRIMARY_LOGIN = COLOR_BUTTON_PRIMARY; // for login buttons only
+export const COLOR_BUTTON_SECONDARY = COLOR_WHITE;
+export const COLOR_BUTTON_SECONDARY_LOGIN = COLOR_WHITE; //for login buttons only
+export const COLOR_BUTTON_TEXT_PRIMARY = COLOR_WHITE;
+export const COLOR_BUTTON_TEXT_PRIMARY_LOGIN = COLOR_WHITE;
+export const COLOR_BUTTON_TEXT_SECONDARY = COLOR_BUTTON_PRIMARY;
+export const COLOR_BUTTON_TEXT_SECONDARY_LOGIN = COLOR_BUTTON_PRIMARY;
+
+//Colors relating to backgrounds and borders
 export const COLOR_BACKGROUND_CONTAINER = '#f3f4f5';
 export const COLOR_BACKGROUND_LIST = COLOR_WHITE;
 export const COLOR_BACKGROUND_CONTAINER_PRIMARY = COLOR_WHITE;
 export const LOADING_SCREEN_BACKGROUND = COLOR_WHITE;
-export const COLOR_BUTTON_PRIMARY = COLOR_PRIMARY;
-export const COLOR_BUTTON_SECONDARY = '#414852';
 export const COLOR_SEPARATOR = '#A7A7AA';
 export const COLOR_BORDER = '#e1e5e8';
 export const COLOR_BORDER_SECONDARY = COLOR_WHITE;
 export const COLOR_TOAST = '#0C0D0F';
 export const COLOR_LOADING = 'rgba(255,255,255,.2)';
-export const COLOR_LOGIN_BACKGROUND_GRADIENT_START = COLOR_WHITE;
-export const COLOR_LOGIN_BACKGROUND_GRADIENT_END = COLOR_WHITE;
 
 //Colors related to drop down sort tab for roomslist
 export const COLOR_DROPDOWN_CONTAINER_HEADER = isIOS ? COLOR_WHITE : '#54585E';//sort bar for chat channels
@@ -86,3 +93,4 @@ export const COLOR_LOGIN_BACKGROUND_GRADIENT_END = COLOR_WHITE
 export const COLOR_LOGIN_CONTAINER_BACKGROUND = COLOR_WHITE
 export const COLOR_LOGIN_TEXT_BACKGROUND = TRANSPARENT
 export const COLOR_LOGIN_TEXT_BORDER = TRANSPARENT
+export const COLOR_LOGIN_SERVICE_TEXT = COLOR_TEXT

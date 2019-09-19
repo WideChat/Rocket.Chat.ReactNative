@@ -11,6 +11,7 @@ import styles, { ROW_HEIGHT } from './styles';
 import UnreadBadge from './UnreadBadge';
 import TypeIcon from './TypeIcon';
 import LastMessage from './LastMessage';
+import { ICON_RADIUS_FACTOR } from '../../constants/icons';
 
 export { ROW_HEIGHT };
 
@@ -103,7 +104,7 @@ export default class RoomItem extends React.Component {
 				>
 					<Avatar text={name} size={avatarSize} type={type} baseUrl={baseUrl}
 					        style={styles.avatar} userId={userId} token={token}
-					        borderRadius={avatarSize/2}/>
+					        borderRadius={ 100 * ICON_RADIUS_FACTOR }/>
 					<View style={styles.centerContainer}>
 						<View style={styles.titleContainer}>
 							<TypeIcon type={type} id={id} prid={prid} />
